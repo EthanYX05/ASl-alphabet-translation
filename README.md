@@ -8,15 +8,14 @@ The ASL -alphabet-traslation is able to recognice users hand following the ASL a
 this is a tool to help people with disabilities communicate with people that do not understand American Sign Language(like me!). 
 
 ## How it works
-The program uses a TensorFlow model trained through Teachable machine. 
-*important* the model used can be significantly improved by running more epochs, collecting a bigger data set. There current model is trained with 100 images for each class
+The program uses a TensorFlow model trained through Teachable machine. There current model is trained with 100 images for each class
 [a,b,bg(ie. background),c,d,delete,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z] under a white background/lighting. The data ran throught 500 epochs. If you want to improve the model, follow the Create Your Own Model section.
 
 ##IMPORTANT!
-Note that the model can be significantly improved. My model is created with very limited dataset and limited time.
+Note that the model can be significantly improved by running with a bigger dataset and more epochs. My model is created with very limited amount of images I collected with a limited time frame.
 
 <p align="center">
-  <img src="/model.savedmodel/community-teachable-machine-2.png" width="300">
+  <img src="/model.savedmodel/community-teachable-machine-2.png" width="600">
 </p>
 ## Set Up a jetson nano(a jetson dev kit is recommended to run the program)
 1. With the jetson nano,  Flash microSD Card with the latest version of the JetPack software package as per instruction on this [NVIDIA Web site](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write);
