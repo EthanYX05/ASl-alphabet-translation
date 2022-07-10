@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 import jetson.utils as jsu
-
+from time import sleep
 
 
 
@@ -12,7 +12,7 @@ CAMERA_HEIGHT = 480
 CAMERA_TYPE = "/dev/video0"
 IMAGE_WIDTH = 224
 IMAGE_HEIGHT = 224
-LAZIZ_LABELS = ["a", "b", "background", "c","d","delete","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+LAZIZ_LABELS = ["b", "bg", "c","d","delete","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","a","t","u","v","w","x","y","z"]
 
 
 
@@ -36,14 +36,16 @@ def rgba2rgb(rgba, background=(255,255,255)):
 saved_model = tf.keras.models.load_model("model.savedmodel")
 nano_model = saved_model.signatures["serving_default"]
 
-# Create the camera and display
-font = jsu.cudaFont()
+# Create the camera
 camera = jsu.gstCamera(CAMERA_WIDTH, CAMERA_HEIGHT, CAMERA_TYPE)
-display = jsu.videoOutput('display://0')
-temp_output =[""]
+
+temp_output =["init"]
+
 
 # Process frames and recognise objects until user exits
 while True:
+    if len(temp_output) >13:
+         temp_output =["init"]
     # Capture the image
     img, width, height = camera.CaptureRGBA(zeroCopy=1)
 
@@ -53,18 +55,26 @@ while True:
     nano_image = np.expand_dims(nano_image, axis=0)
 
     # Classify the image
-    prediction = nano_model(tf.constant(nano_image, dtype=float))["sequential_3"].numpy()
+    prediction = saved_model.predict(nano_image)
 
     # Find the prediction confidence and the object description
     confidence = max(prediction[0])
     conf_index = np.argmax(prediction[0])
     class_desc = LAZIZ_LABELS[conf_index]
+
     if class_desc != temp_output[-1]:
-        if class_desc == "background":
+        if class_desc == "bg":
+            print("no input detected")
+            sleep(2)
             continue
         elif class_desc == "delete":
             del temp_output[-1]
+            print("recent input has been deleted")
+            print(temp_output)
+            sleep(2)
         else:
+            print("input " + class_desc + " has been added")
             temp_output.append(class_desc)
             print(temp_output)
+            sleep(2)
 
