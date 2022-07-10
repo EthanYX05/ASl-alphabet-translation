@@ -16,7 +16,9 @@ The program uses a TensorFlow model trained through Teachable machine.
 </p>
 ## Set Up a jetson nano(a jetson dev kit is recommended to run the program)
 1. With the jetson nano,  Flash microSD Card with the latest version of the JetPack software package as per instruction on this [NVIDIA Web site](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write);
+
 2. Then deploy Jetson inference libraries, as explained on this [GitHub repo's page](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md);
+
 3. And, finally, install TensorFlow framework on your Jetson Nano device as per instruction on this [NVIDIA Web site](https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html).
 
 ## Run the program
