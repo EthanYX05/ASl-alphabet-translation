@@ -11,13 +11,14 @@ this is a tool to help people with disabilities communicate with people that do 
 The program uses a TensorFlow model trained through Teachable machine. There current model is trained with 100 images for each class
 [a,b,bg(ie. background),c,d,delete,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z] under a white background/lighting. The data ran throught 500 epochs. If you want to improve the model, follow the Create Your Own Model section.
 
-##IMPORTANT!
+## IMPORTANT!
 Note that the model can be significantly improved by running with a bigger dataset and more epochs. My model is created with very limited amount of images I collected with a limited time frame.
 
 <p align="center">
   <img src="/model.savedmodel/community-teachable-machine-2.png" width="600">
 </p>
 ## Set Up a jetson nano(a jetson dev kit is recommended to run the program)
+
 1. With the jetson nano,  Flash microSD Card with the latest version of the JetPack software package as per instruction on this [NVIDIA Web site](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write);
 
 2. Then deploy Jetson inference libraries, as explained on this [GitHub repo's page](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md);
