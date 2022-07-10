@@ -1,5 +1,5 @@
 # ASl-alphabet-translation
-translate ASL alphabet from camera feed
+Translate ASL alphabet from camera feed.
 
 ## Capabilities
 The ASL -alphabet-traslation is able to recognice users hand following the ASL alphabet and translate it into letters and print into word in the terminal.
