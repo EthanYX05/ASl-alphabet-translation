@@ -11,6 +11,10 @@ this is a tool to help people with disabilities communicate with people that do 
 The program uses a TensorFlow model trained through Teachable machine. 
 *important* the model used can be significantly improved by running more epochs, collecting a bigger data set. There current model is trained with 100 images for each class
 [a,b,bg(ie. background),c,d,delete,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z] under a white background/lighting. The data ran throught 500 epochs. If you want to improve the model, follow the Create Your Own Model section.
+
+##IMPORTANT!
+Note that the model can be significantly improved. My model is created with very limited dataset and limited time.
+
 <p align="center">
   <img src="/model.savedmodel/community-teachable-machine-2.png" width="300">
 </p>
