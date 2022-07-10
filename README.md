@@ -17,7 +17,7 @@ Note that the model can be significantly improved by running with a bigger datas
 <p align="center">
   <img src="/model.savedmodel/community-teachable-machine-2.png" width="600">
 </p>
-## Set Up a jetson nano(a jetson dev kit is recommended to run the program) 
+## Set Up a jetson nano
 
 1. With the jetson nano,  Flash microSD Card with the latest version of the JetPack software package as per instruction on this [NVIDIA Web site](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write);
 
@@ -43,6 +43,8 @@ Note that the model can be significantly improved by running with a bigger datas
 ## Dependency
 Tensorflow
 python3 
+A USB camera
+A display that can be connected with an HDMI cable
 
 
 ## Reference
